@@ -1,23 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konverter Suhu</title>
+    <title>Konversi Suhu</title>
+    <script src="./js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header id="navigation-bar">
-        <h3 id="logo">Suatu Logo</h3>
-        <nav id="navigation">
-            <a href="">Lihat Hasil</a>
-            <a href="">Lihat Rumus</a>
-        </nav>
-    </header>
-    <div class="input-section">
-        <label for="input-field">Celcius</label>
-        <input type="number" class="input-field">
-    </div>
-    <button class="my-button">Konversi</button>
+    <div id="pembalut">
+
+        <h1 id="judul">Konversi Suhu</h1>
+    
+        <div id="reverseSuhu">
+            <div>
+                <div class="optionSuhu">
+                    <div>Dari:</div>
+                    <select id="dari">
+                        <option value="C">Celsius (&degC)</option>
+                        <option value="F">Fahrenheit (&degF)</option>
+                    </select>
+                </div>
+                <br>
+    
+                <div class="optionSuhu">
+                    <div>Ke:</div>  
+                    <select id="ke">
+                        <option value="F">Fahrenheit (&degF)</option>
+                        <option value="C">Celsius (&degC)</option>
+                    </select>
+                </div>
+            </div>
+    
+            <button id="reverse" onclick="tukarSuhu()">↕</button>
+        </div>
+        <br>
+
+        <div id="daerahInput">
+
+            <label> Nilai yang ingin dikonversi</label>
+            
+            <div id="inputUser">
+                <button onclick="plusMinus()">+/-</button>
+            
+                <input id="input" placeholder="Ketik di sini" type="number"></input>
+            </div>
+
+        </div>
+        <br>
+        
+        <div id="hapusKonversi">
+            <button onclick="hapusInput()">Hapus</button>
+            <button onclick="hasilKonversi()">Konversi</button>
+        </div>
+        <br>
+    
+        <div id="hasilSolusi">
+
+            <div id="hasil">Hasil:</div>
+            <div id="displayHasil"></div>
+            
+        
+            <div id="solusi">
+                <hr>
+                <div><strong>Solusi</strong></div>
+                
+                <hr>
+                <div id="solusiF">
+                    <div>°F = (°C × (9/5)) + 32</div>
+                    <br>
+                    <div>°F = (<span class="solusiSatu"></span> × (9/5)) + 32</div>
+                    <br>
+                    <div>°F = <span class="solusiDua"></span></div>
+                </div>
+            
+                <div id="solusiC">
+                    <div>°C = (°F − 32) × (5/9)</div>
+                    <br>
+                    <div>°C = (<span class="solusiSatu"></span> − 32) × (5/9)</div>
+                    <br>
+                    <div>°C = <span class="solusiDua"></span></div>
+                </div>
+            </div>
+
+        </div>
+    
+    
+    
+    </div>    
+
 </body>
 </html>
